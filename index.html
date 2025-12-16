@@ -2,44 +2,57 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Zibarask</title>
+<title>Zibarask Panel</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
   font-family:Arial;
-  background:#020617;
+  background:linear-gradient(135deg,#020617,#064e3b);
   color:white;
-  padding:20px;
 }
-nav{
+header{
+  padding:20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
 }
+main{
+  padding:20px;
+}
+.card{
+  background:#020617;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 0 20px rgba(0,0,0,.6);
+  margin-top:20px;
+}
 button{
-  padding:10px 14px;
+  padding:10px 16px;
   border:none;
   border-radius:8px;
   background:#ef4444;
   color:white;
+  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
+<header>
   <h2>Şanlı Zibarask SK</h2>
   <button onclick="logout()">Çıkış Yap</button>
-</nav>
+</header>
 
-<hr>
-
-<h3>Hoş geldin</h3>
-<p>Bu siteye giriş yapan herkes serbestçe gezebilir.</p>
-<p>Tasarımı daha sonra geliştireceğiz.</p>
+<main>
+  <div class="card">
+    <h3>Panel</h3>
+    <p>Bu alan sadece giriş yapan kullanıcılara açıktır.</p>
+    <p>Buraya daha sonra içerikler, sayfalar ve tasarım ekleyeceğiz.</p>
+  </div>
+</main>
 
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
