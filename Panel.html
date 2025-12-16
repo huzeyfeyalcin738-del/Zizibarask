@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Zibarask Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:linear-gradient(135deg,#020617,#064e3b);
+  color:white;
+}
+header{
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+main{
+  padding:20px;
+}
+.card{
+  background:#020617;
+  padding:20px;
+  border-radius:14px;
+  box-shadow:0 0 20px rgba(0,0,0,.6);
+  margin-top:20px;
+}
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:#ef4444;
+  color:white;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>Şanlı Zibarask SK</h2>
+  <button onclick="logout()">Çıkış Yap</button>
+</header>
+
+<main>
+  <div class="card">
+    <h3>Panel</h3>
+    <p>Bu alan sadece giriş yapan kullanıcılara açıktır.</p>
+    <p>Buraya daha sonra içerikler, sayfalar ve tasarım ekleyeceğiz.</p>
+  </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyB-xDIZCIGrCCnilHfo6aP4kn3OpTXJByw",
+  authDomain: "zizibarask-4d7d8.firebaseapp.com",
+  projectId: "zizibarask-4d7d8",
+  storageBucket: "zizibarask-4d7d8.firebasestorage.app",
+  messagingSenderId: "52728406964",
+  appId: "1:52728406964:web:d83e005633f52719c808e1"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+
+auth.onAuthStateChanged(user=>{
+  if(!user){
+    window.location.href="index.html";
+  }
+});
+
+function logout(){
+  auth.signOut().then(()=>{
+    window.location.href="index.html";
+  });
+}
+</script>
+
+</body>
+</html>
